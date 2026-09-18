@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=MedievalSharp&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background:
+        radial-gradient(circle at center, #3b3024 0%, #1a1511 70%);
+    font-family: Georgia, serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 180, 70, 0.08), transparent 25%),
+        radial-gradient(circle at 80% 80%, rgba(255, 120, 30, 0.06), transparent 25%);
+    animation: luzFogo 4s infinite alternate;
+}
+
+@keyframes luzFogo {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#pergaminho {
+    position: relative;
+    width: 800px;
+    max-width: 100%;
+    padding: 55px 50px;
+    text-align: center;
+    color: #3b2413;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(100, 55, 15, 0.18),
+            transparent 8%,
+            transparent 92%,
+            rgba(100, 55, 15, 0.18)
+        ),
+        radial-gradient(
+            ellipse at center,
+            #f6e5ae 0%,
+            #e7c982 70%,
+            #b88743 100%
+        );
+
+    border: 14px solid #6e421c;
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 0 5px #3c2413,
+        0 0 30px rgba(0, 0, 0, 0.9),
+        inset 0 0 45px rgba(95, 48, 12, 0.45);
+
+    animation: aparecer 1.5s ease-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.75) rotate(-3deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+h1 {
+    margin: 0 0 12px;
+    font-family: 'MedievalSharp', Georgia, serif;
+    font-size: clamp(42px, 8vw, 72px);
+    color: #641d1d;
+    text-shadow:
+        2px 2px 0 #d2a85f,
+        3px 3px 4px rgba(0, 0, 0, 0.35);
+    animation: brilho 2s infinite alternate;
+}
+
+@keyframes brilho {
+    from {
+        text-shadow:
+            2px 2px 0 #d2a85f,
+            3px 3px 4px rgba(0, 0, 0, 0.35);
+    }
+
+    to {
+        text-shadow:
+            2px 2px 0 #d2a85f,
+            0 0 18px rgba(255, 213, 100, 0.8);
+    }
+}
+
+h2 {
+    font-family: 'Cinzel', Georgia, serif;
+    color: #4a2d16;
+}
+
+.subtitulo {
+    font-size: 21px;
+    margin-bottom: 30px;
+}
+
+.chave {
+    font-size: 55px;
+    display: inline-block;
+    animation: flutuar 2s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+input {
+    width: 220px;
+    padding: 14px;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 8px;
+    color: #3b2413;
+    background: #f8e8b6;
+    border: 3px solid #6b1f1f;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: inset 0 0 12px rgba(80, 40, 10, 0.3);
+}
+
+input:focus {
+    box-shadow:
+        0 0 15px rgba(107, 31, 31, 0.6),
+        inset 0 0 12px rgba(80, 40, 10, 0.3);
+}
+
+button {
+    display: block;
+    margin: 25px auto 0;
+    padding: 15px 35px;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 21px;
+    font-weight: bold;
+    color: #f8e8b6;
+    background: linear-gradient(#8b3030, #571717);
+    border: 3px solid #3c1515;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow:
+        0 5px 0 #351010,
+        0 8px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 0 #351010,
+        0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow:
+        0 1px 0 #351010,
+        0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.erro {
+    min-height: 28px;
+    margin-top: 22px;
+    color: #8b0000;
+    font-weight: bold;
+    font-size: 20px;
+    animation: erro 0.3s ease;
+}
+
+@keyframes erro {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    75% {
+        transform: translateX(8px);
+    }
+}
+
+#resultado {
+    display: none;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 2px solid rgba(100, 50, 15, 0.5);
+    animation: revelar 1.5s ease-out;
+}
+
+@keyframes revelar {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        clip-path: inset(0 0 100% 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.parabens {
+    color: #641d1d;
+    font-size: 32px;
+}
+
+.local {
+    font-size: 23px;
+    line-height: 1.6;
+}
+
+.mapa {
+    width: 90%;
+    max-width: 600px;
+    margin-top: 20px;
+    border: 7px solid #6b1f1f;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mapa:hover {
+    transform: scale(1.04) rotate(1deg);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7);
+}
+
+.mensagem-final {
+    margin-top: 25px;
+    padding: 18px;
+    font-size: 21px;
+    line-height: 1.5;
+    background: rgba(255, 239, 178, 0.45);
+    border: 2px dashed #6b1f1f;
+    border-radius: 10px;
+}
+
+.brasao {
+    margin-top: 25px;
+    font-size: 28px;
+    letter-spacing: 12px;
+    color: #6b1f1f;
+}
+
+@media (max-width: 600px) {
+
+    #pergaminho {
+        padding: 40px 20px;
+        border-width: 8px;
+    }
+
+    h1 {
+        font-size: 43px;
+    }
+
+    .subtitulo {
+        font-size: 18px;
+    }
+
+    .local {
+        font-size: 19px;
+    }
+
+    .mensagem-final {
+        font-size: 18px;
+    }
+}

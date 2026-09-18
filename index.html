@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão Secreta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main id="pergaminho">
+
+    <h1>Missão Secreta</h1>
+
+    <div class="chave">🗝️</div>
+
+    <p class="subtitulo">
+        Uma mensagem misteriosa aguarda por ti...
+        <br>
+        Apenas os dignos conseguirão avançar.
+    </p>
+
+    <h2>Introduz o código secreto 🔐</h2>
+
+    <input id="codigo" type="password" maxlength="4" placeholder="∗∗∗∗" aria-label="Código secreto">
+
+   <button onclick="verificar()" style="margin-bottom: 50px">
+        Desbloquear a Missão 🔓
+    </button>
+
+    <h2>CORTES, LEIRIA - 2025/2026</h2>
+
+    <div class="brasao">
+        ⚔️ 🏰 ⚔️
+    </div>
+
+    <p id="erro" class="erro"></p>
+
+    <section id="resultado">
+
+        <h2 class="parabens">
+            PARABÉNS, MISSÃO DESBLOQUEADA! 🎉
+        </h2>
+
+        <h3>
+            A primeira etapa da aventura foi concluída.
+        </h3>
+
+        <p class="local">
+            📅 No dia <strong>22 de julho</strong><br>
+            🕖 às <strong>19 horas</strong><br><br>
+
+            Deverás dirigir-te ao seguinte ponto de encontro!
+        </p>
+
+        <h2>
+            Clica no mapa para revelar o local! 📍
+        </h2>
+
+        <a id="linkMapa" href="https://maps.app.goo.gl/j22xkcMQwN8vjvww6" target="_blank" rel="noopener noreferrer">
+            <img style="max-width: 30%;" src="./Missão Secreta_files/235861.png" alt="Mapa do ponto de encontro" class="mapa">
+        </a>
+
+        <div id="mensagemFinal" class="mensagem-final" style="display: none;">
+            Revelaste o local de encontro: <strong>Parque do IMT - Leiria</strong><br><br>
+            No local de encontro, receberás uma mensagem por e-mail com o destino secreto do jantar.
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
